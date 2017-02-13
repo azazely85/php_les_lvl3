@@ -3,6 +3,15 @@ class User{
     public $name;
     public $login;
     public $password;
+    function __construct($name,$login,$password){
+        $this->name=$name;
+        $this->login=$login;
+        $this->password=$password;
+    }
+    function __destruct(){
+        $this->showInfo();
+    }
+
     function showInfo(){
         echo "Name: ".$this->name."<br/>";
         echo "Login: ".$this->login."<br/>";
@@ -10,20 +19,8 @@ class User{
         echo "<hr>";
     }
 }
-$user1 = new User();
-$user1->name="Ivan";
-$user1->login="ivan2";
-$user1->password="123456";
-$user1->showInfo();
+$user1 = new User("Ivan","ivan2","123456");
 
-$user2 = new User();
-$user2->name="Petro";
-$user2->login="petr2";
-$user2->password="123456";
-$user2->showInfo();
+$user2 = new User("Petro","petr2","123456");
 
-$user3 = new User();
-$user3->name="Mark";
-$user3->login="mark85";
-$user3->password="123456";
-$user3->showInfo();
+$user3 = new User("Mark","mark85","123456");
